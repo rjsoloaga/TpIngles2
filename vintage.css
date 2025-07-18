@@ -1,0 +1,353 @@
+/* vintage.css - estilo retro 90's */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f5dc;
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  color: #000;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.6;
+}
+
+#background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -999;
+  background: #1e1e1e;
+  pointer-events: none;
+}
+
+header {
+  background-color: #ffcc00;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 5px double #000;
+}
+
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: #f5ecd7;
+  border-bottom: 2px dashed #222;
+  z-index: 1000;
+  padding: 0.3em 1em;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.header-container h1 {
+  margin: 0.5rem 1rem;
+  font-size: 1.8rem;
+}
+
+.header-container nav ul {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.icon-btn, #language-selector {
+  font-size: 1.2em;
+  padding: 0.2em 0.5em;
+  border-radius: 5px;
+  border: 1px dashed #222;
+  background: #fffbe6;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.icon-btn:hover, #language-selector:focus {
+  background: #f5ecd7;
+  color: #b22222;
+}
+
+h1, h2 {
+  font-family: Impact, Charcoal, sans-serif;
+  color: #800000;
+  text-shadow: 1px 1px #fff;
+}
+
+section {
+  background-color: #fff8dc;
+  border: 3px dashed #000;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 900px;
+  box-shadow: 3px 3px 0px #999;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.skills-grid div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f0e68c;
+  padding: 0.5rem 1rem;
+  border: 2px inset #000;
+  font-size: 1rem;
+}
+
+.skills-grid i {
+  font-size: 1.5rem;
+}
+
+.soft-skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.soft-skills li {
+  background-color: #fff;
+  border: 2px dashed #000;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  list-style: none;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 2px 2px 0px #999;
+}
+
+.project {
+  border: 2px dashed #555;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fff8dc;
+  color: #000;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.project h3 {
+  margin-top: 0;
+  color: #004400;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+#console-output {
+  font-family: 'Courier New', monospace;
+  background-color: #000;
+  color: #00ff00;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 900px;
+  height: 200px; /* Misma altura que en moderno */
+  overflow: auto;
+  border: 2px solid #00ff00;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  box-shadow: 2px 2px 0 #888;
+}
+
+button, a, select {
+  background-color: #00ffff;
+  border: 2px solid #000;
+  color: #000;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: normal;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo para las opciones del selector en modo vintage */
+select option {
+    background-color: #f0e68c; /* Color de fondo vintage */
+    color: #000; /* Color de texto vintage */
+}
+
+button:hover, a:hover {
+  background-color: #ff69b4;
+}
+
+form input, form textarea {
+  width: 100%;
+  background-color: #fff8dc;
+  border: 2px inset #000;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+form button[type="submit"] {
+  background-color: #32cd32;
+  font-weight: bold;
+  border: 2px outset #000;
+}
+
+footer {
+  background-color: #ffcc00;
+  text-align: center;
+  padding: 1rem;
+  border-top: 5px double #000;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0.3rem 0.5rem;
+}
+
+/* Estilos para el modal personalizado */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff8dc; /* Retro background */
+  margin: auto;
+  padding: 20px;
+  border: 3px dashed #000; /* Retro border */
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 3px 3px 0px #999; /* Retro shadow */
+  text-align: center;
+  position: relative;
+  color: #000; /* Retro text color */
+  font-family: 'Courier New', Courier, monospace; /* Retro font */
+}
+
+.close-button {
+  color: #800000; /* Retro close button color */
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #ff69b4; /* Retro hover color */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal-ok-button {
+  background-color: #32cd32; /* Retro green button */
+  color: #000;
+  padding: 10px 20px;
+  border: 2px outset #000; /* Retro border */
+  cursor: pointer;
+  margin-top: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+#modal-ok-button:hover {
+  background-color: #00ffff; /* Retro hover color */
+}
+
+.whatsapp-contact {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.whatsapp-contact a {
+  background-color: #00ffff;
+  color: #000;
+  border: 2px solid #000;
+  padding: 0.5rem 1rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+.whatsapp-contact a:hover {
+  background-color: #1ebe57;
+}
+
+.whatsapp-contact img {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+.botones-contacto {
+  display: flex;
+  gap: 10px;
+}
+
+/* Iconos sociales junto al botón de enviar */
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  background: #fffbe6;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.social-icons a:hover {
+  background: #ff69b4;
+  border-color: #800000;
+}
+
+.social-icons svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+

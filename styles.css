@@ -1,0 +1,402 @@
+/* Estilo general */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+#background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -999;
+  background: #1e1e1e;
+  pointer-events: none;
+}
+
+header {
+  background-color: #2b2b2b;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* O en styles.css si usas el modo moderno */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: #222;
+  z-index: 1000;
+  padding: 0.3em 1em;
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.header-container h1 {
+  font-size: 1.1em;
+  margin-right: 1em;
+  color: #fff;
+}
+
+.header-container nav ul {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.icon-btn, #language-selector {
+  font-size: 1.2em;
+  padding: 0.2em 0.5em;
+  border-radius: 5px;
+  border: none;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 40px;
+    padding: 0.2em 0.5em;
+  }
+  .header-container nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.3em;
+  }
+  .icon-btn, #language-selector {
+    font-size: 1em;
+    padding: 0.1em 0.3em;
+  }
+}
+
+/* Estilo para las opciones del selector */
+nav select option {
+    background-color: #333; /* Fondo para las opciones */
+    color: #f0f0f0; /* Color del texto de las opciones */
+}
+
+/* Responsive menu button (hamburger) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 2px solid #ccc;
+  color: #f0f0f0;
+  font-size: 1.2rem;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+    background-color: #2b2b2b;
+    padding: 1rem 0;
+    align-items: flex-start; /* Alinea los elementos a la izquierda en modo columna */
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: inline-block;
+    margin-left: auto;
+  }
+}
+
+section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  color: #ffffff;
+  border-bottom: 1px solid #555;
+  padding-bottom: 0.3rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.skills-grid div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #2b2b2b;
+  padding: 0.75rem 1rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.skills-grid i {
+  font-size: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin-top: 1rem;
+}
+
+input, textarea {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+}
+
+button[type="submit"] {
+  background-color: #0078d7;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #005fa3;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #2b2b2b;
+  color: #aaa;
+  margin-top: 2rem;
+}
+
+.soft-skills {
+  list-style: square inside;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+}
+
+/* Estilos para el modal personalizado */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #2b2b2b;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+  color: #f0f0f0;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal-ok-button {
+  background-color: #0078d7;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#modal-ok-button:hover {
+  background-color: #005fa3;
+}
+
+/* Modifica el estilo de la consola en styles.css */
+#console-output {
+  font-family: 'Courier New', monospace;
+  background-color: #1e1e1e;
+  color: #4AF626; /* Verde más suave */
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 900px;
+  height: 200px; /* Altura aumentada */
+  overflow: auto;
+  border: 1px solid #4AF626;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Asegúrate de que los checkmarks sean visibles */
+#console-output::before {
+  content: ">";
+  margin-right: 0.5rem;
+  color: #4AF626;
+}
+
+.whatsapp-contact {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.whatsapp-contact a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  background-color: #25d366;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.whatsapp-contact a:hover {
+  background-color: #1ebe57;
+}
+
+.whatsapp-contact img {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+/* Puedes poner esto en styles.css o vintage.css */
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: inherit;
+  padding: 0.3em 0.5em;
+  transition: color 0.2s;
+}
+.icon-btn:hover {
+  color: #007bff;
+}
+
+/* Ejemplo de CSS */
+.botones-contacto {
+  display: flex;
+  gap: 10px;
+}
+
+/* Iconos sociales junto al botón de enviar */
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  background: #e0e0e0;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.social-icons a:hover {
+  background: #ff69b4;
+  border-color: #800000;
+}
+
+.social-icons svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+/* Estilo para enlaces tipo botón (GitHub, Descargar PDF) */
+a.repo-btn,
+a[data-i18n="downloadCV"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f5f5f5;
+  color: #222;
+  border: 1.5px solid #888;
+  border-radius: 6px;
+  padding: 0.4em 1em;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+a.repo-btn:hover,
+a[data-i18n="downloadCV"]:hover {
+  background: #e0e0e0;
+  color: #0078d7;
+  border-color: #0078d7;
+}

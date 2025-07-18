@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portfolio</title>
+    <link href="vintage.css" id="theme-link" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="background-canvas"></canvas>
+
+    <header>
+        <div class="header-container">
+            <h1 data-i18n="fullName">Roberto Javier Soloaga</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <select id="language-selector" onchange="setLanguage(this.value)">
+                            <option value="es">Español</option>
+                            <option value="en">English</option>
+                            <option value="fr">Français</option>
+                            <option value="de">Deutsch</option>
+                            <option value="it">Italiano</option>
+                            <option value="pt">Português</option>
+                            <option value="ja">日本語</option>
+                            <option value="zh">中文</option>
+                            <option value="ru">Русский</option>
+                            <option value="ar">العربية</option>
+                            <option value="ko">한국어</option>
+                            <option value="hi">हिन्दी</option>
+                        </select>
+                    </li>
+                    <li>
+                        <button onclick="toggleTheme()" title="Cambiar estilo" class="icon-btn">
+                            <i class="fa-solid fa-circle-half-stroke"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="toggleAccesibilidad()" title="Accesibilidad" class="icon-btn">
+                            <i class="fa-solid fa-universal-access"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2 data-i18n="homeTitle">Sobre mí</h2>
+            <p data-i18n="homeDesc">
+                Soy Javier, desarrollador backend con una profunda pasión por Python y sus ecosistemas. Me especializo en construir soluciones robustas y eficientes, enfocándome en la arquitectura de sistemas, la optimización de bases de datos y la integración de APIs.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2 data-i18n="skillsTitle">Habilidades / Herramientas</h2>
+            <div class="skills-grid">
+                <div>
+                    <i class="devicon-python-plain colored"></i>
+                    Python
+                </div>
+                <div>
+                    <i class="devicon-django-plain colored"></i>
+                    Django
+                </div>
+                <div>
+                    <i class="devicon-pandas-original colored"></i>
+                    Pandas
+                </div>
+                <div>
+                    <i class="devicon-mysql-plain colored"></i>
+                    MySQL
+                </div>
+                <div>
+                    <i class="devicon-sqlite-plain colored"></i>
+                    SQLite
+                </div>
+                <div>
+                    <i class="devicon-javascript-plain colored"></i>
+                    JavaScript
+                </div>
+                <div>
+                    <i class="devicon-html5-plain colored"></i>
+                    HTML
+                </div>
+                <div>
+                    <i class="devicon-css3-plain colored"></i>
+                    CSS
+                </div>
+                <div>
+                    <i class="devicon-git-plain colored"></i>
+                    Git
+                </div>
+                <div>
+                    <i class="devicon-github-original colored"></i>
+                    GitHub
+                </div>
+                <div>
+                    🖥 Visual Basic 6
+                </div>
+                <div>
+                    🌀 Turbo Pascal
+                </div>
+                <div>
+                    <i class="devicon-trello-plain colored"></i>
+                    Trello
+                </div>
+                <div>
+                    📋 Jira
+                </div>
+            </div>
+            <h3 data-i18n="softSkillsTitle">Habilidades Blandas</h3>
+            <ul class="soft-skills">
+                <li data-i18n="skill1">Comunicación efectiva</li>
+                <li data-i18n="skill2">Trabajo en equipo</li>
+                <li data-i18n="skill3">Resolución de problemas</li>
+                <li data-i18n="skill4">Gestión del tiempo</li>
+                <li data-i18n="skill5">Adaptabilidad</li>
+                <li data-i18n="skill6">Proactividad</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2 data-i18n="projectsTitle">Proyectos / Experiencia</h2>
+            <p data-i18n="projectsDesc">Descripción de mis proyectos aquí.</p>
+            <div id="console-output"></div>
+            <div class="project">
+                <h3 data-i18n="project1Title">Sistema POS para comercio</h3>
+                <p>
+                    <strong data-i18n="technologies">Tecnologías:</strong>
+                    Python, MySQL, Tkinter
+                </p>
+                <p data-i18n="project1Desc">
+                    Sistema de punto de venta en desarrollo, orientado a pequeños comercios, con gestión de stock, ventas y reportes.
+                </p>
+                <p>
+                    <em data-i18n="project1Status">Actualmente en Desarrollo.</em>
+                </p>
+                <!-- Botón GitHub -->
+                <a href="https://github.com/rjsoloaga/SGV1.git" target="_blank" class="repo-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="project">
+                <h3 data-i18n="project2Title">Python + Django (Blog de Cocina)</h3>
+                <p>
+                    <strong data-i18n="technologies">Tecnologías:</strong>
+                    Python, Django, MySQL
+                </p>
+                <p data-i18n="project2Desc">
+                    Blog minimalista creado durante la Etapa 2 del Informatorio, con CRUD de artículos y login.
+                </p>
+                <!-- Botón GitHub -->
+                <a href="https://github.com/JustaDeathKnight/Proyecto-INFO2023.git" target="_blank" class="repo-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="project">
+                <h3 data-i18n="project3Title">Juego educativo: preguntas y respuestas</h3>
+                <p>
+                    <strong data-i18n="technologies">Tecnologías:</strong>
+                    HTML, JavaScript
+                </p>
+                <p data-i18n="project3Desc">
+                    Juego de preguntas con puntaje, desarrollado para la materia Practica Profesionalizante 1. Incluye ranking y lógica básica de preguntas aleatorias.
+                </p>
+                <!-- Botón GitHub -->
+                <a href="https://github.com/rjsoloaga/Preguntados.git" target="_blank" class="repo-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="project">
+                <h3 data-i18n="project4Title">Manipulación de datos con Python</h3>
+                <p>
+                    <strong data-i18n="technologies">Tecnologías:</strong>
+                    Python, Pandas
+                </p>
+                <p data-i18n="project4Desc">
+                    Script que descarga, convierte archivo .txt a .csv y procesa toda esos datos para calcular estadísticas, filtrar información y generar reportes.
+                </p>
+                <!-- Botón GitHub -->
+                <a href="https://github.com/rjsoloaga/tpEstadisticas.git" target="_blank" class="repo-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="project">
+                <h3 data-i18n="project5Title">Juego de Nave Espacial</h3>
+                <p>
+                    <strong data-i18n="technologies">Tecnologías:</strong>
+                    Python, PyGames
+                </p>
+                <p data-i18n="project5Desc">
+                    Juego de Nave Espacial que debe eliminar asteroides, desarrollado para ayudar a la tarea escolar de mi hijo.
+                </p>
+                <!-- Botón GitHub -->
+                <a href="https://github.com/rjsoloaga/juegoNave.git" target="_blank" class="repo-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2 data-i18n="achievementsTitle">Logros / Certificaciones</h2>
+            <p data-i18n="achievementsDesc">Aquí van tus logros y certificaciones.</p>
+        </section>
+
+        <section id="resume">
+            <h2 data-i18n="resumeTitle">Currículum</h2>
+            <p data-i18n="resumeDesc">Incluye mi experiencia, títulos y habilidades para el cargo buscado.</p>
+            <a data-i18n="downloadCV" download="CV_Javier_Soloaga.pdf" href="CV_Javier_Soloaga.pdf">Descargar PDF</a>
+        </section>
+
+        <section id="contact">
+            <h2 data-i18n="contactTitle">Contacto</h2>
+            <form id="contact-form">
+                <input type="text" name="user_name" placeholder="Nombre" required>
+                <input type="email" name="user_email" placeholder="Email" required>
+                <textarea name="message" placeholder="Mensaje" required></textarea>
+                <div class="form-actions">
+                  <button type="submit">Enviar</button>
+                  <div class="social-icons">
+                    <a href="https://wa.me/1234567890" target="_blank" title="WhatsApp">
+                      <!-- Icono WhatsApp SVG -->
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#25D366"/>
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.15-.198.297-.767.967-.94 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.075-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.205 5.077 4.372.711.306 1.263.489 1.695.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.075-.124-.272-.198-.57-.347z" fill="#fff"/>
+                      </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/javier-soloaga-9520051b1" target="_blank" title="LinkedIn">
+                      <!-- Icono LinkedIn SVG -->
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="#0077B5" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="24" height="24" rx="4" fill="#0077B5"/>
+                        <path d="M7.5 17h-2v-7h2v7zm-1-8.2c-.7 0-1.3-.6-1.3-1.3s.6-1.3 1.3-1.3c.7 0 1.3.6 1.3 1.3s-.6 1.3-1.3 1.3zm10.5 8h-2v-3.5c0-.8-.3-1.3-1-1.3-.6 0-1 .5-1 1.3V17h-2v-7h2v1c.3-.5 1-1 2-1 1.5 0 2.5 1 2.5 3V17z" fill="#fff"/>
+                      </svg>
+                    </a>
+                    <a href="https://github.com/rjsoloaga" target="_blank" title="GitHub">
+                      <!-- Icono GitHub SVG -->
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="#333" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#333"/>
+                        <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.525.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.646.35-1.088.636-1.34-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 7.844c.85.004 1.705.115 2.504.338 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.099 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .268.18.579.688.481C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" fill="#fff"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+            
+        </section>
+
+        
+    </main>
+
+    <footer>
+        <p data-i18n="footerText">&copy; 2025 Roberto Javier Soloaga</p>
+    </footer>
+
+    <div id="easter-egg" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:black; z-index:9999;">
+        <canvas height="400" id="snake-canvas" style="display:block; margin: 50px auto; background: #111; border: 2px solid lime;" width="400"></canvas>
+        <p style="color:white; text-align:center;" data-i18n="snakeInstructions">Usá las flechas para moverte. Presioná ESC para salir.</p>
+    </div>
+
+    <!-- Custom Modal for Messages -->
+    <div id="custom-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p id="modal-message"></p>
+            <button id="modal-ok-button">OK</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>window.emailjs.init("m_f-JXA55UgnlbL7z");</script>
+
+    <script type="module" src="main.js"></script>
+    <script src="background.js"></script>
+</body>
+</html>
